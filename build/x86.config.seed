@@ -5,10 +5,20 @@ CONFIG_TARGET_x86_64_DEVICE_generic=y
 # CONFIG_VMDK_IMAGES is not set
 CONFIG_TARGET_ROOTFS_PARTSIZE=750
 
+CONFIG_ISO_IMAGES=y
+CONFIG_QCOW2_IMAGES=y
+CONFIG_VDI_IMAGES=y
+CONFIG_VMDK_IMAGES=y
+CONFIG_VHDX_IMAGES=y
+
 # 访问控制
 CONFIG_PACKAGE_luci-app-accesscontrol=y
+
 # ACME SSL 证书
 CONFIG_PACKAGE_luci-app-acme=y
+CONFIG_PACKAGE_acme-deploy=y
+CONFIG_PACKAGE_acme-dnsapi=y
+CONFIG_PACKAGE_acme-notify=y
 
 # 广告屏蔽大师 Plus
 CONFIG_PACKAGE_luci-app-adbyby-plus=y
@@ -37,13 +47,17 @@ CONFIG_PACKAGE_luci-app-ssr-plus=y
 # OpenVPN 服务
 CONFIG_PACKAGE_luci-app-openvpn-server=y
 
+# 释放内存
 CONFIG_PACKAGE_luci-app-ramfree=y
+
+# 云盘同步
 CONFIG_PACKAGE_luci-app-rclone=y
 
 # 统计
 CONFIG_PACKAGE_luci-app-statistics=y
 
-# 组播转 UDP
+# 组播转 UDP (IPTV)
+CONFIG_PACKAGE_igmpproxy=y
 CONFIG_PACKAGE_luci-app-udpxy=y
 
 # KMS 服务
@@ -58,6 +72,9 @@ CONFIG_PACKAGE_luci-app-wol=y
 CONFIG_PACKAGE_luci-app-zerotier=y
 
 
+# VPN 连接支持库
+CONFIG_PACKAGE_xl2tpd=y
+CONFIG_PACKAGE_ppp-mod-pptp=y
 
 # DDNS 扩展脚本
 CONFIG_PACKAGE_ddns-scripts_cloudflare.com-v4=y
